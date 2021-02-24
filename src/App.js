@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import React, {useState, useContext} from 'react';
+import {AppContext} from './components/AppContext';
 import './App.css';
+import Log from './components/Log';
+import GameTitle from './components/GameTitle';
+import DigitForm from './components/DigitForm';
+import GuessForm from './components/GuessForm';
 
 function App() {
+  const [
+    numberOfDigits,
+    setNumberOfDigits,
+    solution,
+    setSolution,
+    listOfGuesses,
+    setListOfGuesses,
+  ] = useContext(AppContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="game-container">
+        <GameTitle title="Guess My Number" />
+        <div className="container main-area">
+          <div className="logs">
+            <Log areaDescription="high" title="too high" />
+            <Log areaDescription="low" title="too low" />
+          </div>
+          <div className="prompts">
+            {numberOfDigits ? <GuessForm /> : <DigitForm />}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
