@@ -28,7 +28,7 @@ function App() {
           <div className="prompts">
             {solution !==
             Number(
-              listOfGuesses[listOfGuesses.length - 1].split('').join('')
+              listOfGuesses[listOfGuesses.length - 1].split(',').join('')
             ) ? (
               numberOfDigits ? (
                 <GuessForm />
