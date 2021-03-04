@@ -14,9 +14,13 @@ function Log({areaDescription, title}) {
   useEffect(() => {
     let filteredList;
     if (areaDescription === 'low') {
-      filteredList = listOfGuesses.filter((guess) => solution > guess);
+      filteredList = listOfGuesses.filter(
+        (guess) => solution > Number(guess.split(',').join(''))
+      );
     } else {
-      filteredList = listOfGuesses.filter((guess) => solution < guess);
+      filteredList = listOfGuesses.filter(
+        (guess) => solution < Number(guess.split(',').join(''))
+      );
     }
     if (filteredList.length > 1) {
       filteredList.unshift(filteredList.pop());

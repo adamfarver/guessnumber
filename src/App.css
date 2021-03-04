@@ -170,3 +170,14 @@ input {
 .m-0 {
   margin: 0;
 }
+
+.winning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.winning > h1 {
+  text-transform: uppercase;
+}

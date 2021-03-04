@@ -32,6 +32,7 @@ function DigitForm() {
 
           const randomNumber = Math.round(Math.random() * (max - min) + min);
           setSolution(randomNumber);
+          console.log(`Solution: ${randomNumber}`);
           setNumberOfDigits(digits);
         }}
       >

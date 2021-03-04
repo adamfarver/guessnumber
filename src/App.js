@@ -1,10 +1,11 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
 import {AppContext} from './components/AppContext';
 import './App.css';
 import Log from './components/Log';
 import GameTitle from './components/GameTitle';
 import DigitForm from './components/DigitForm';
 import GuessForm from './components/GuessForm';
+import WinCard from './components/WinCard';
 
 function App() {
   const [
@@ -25,7 +26,18 @@ function App() {
             <Log areaDescription="low" title="too low" />
           </div>
           <div className="prompts">
-            {numberOfDigits ? <GuessForm /> : <DigitForm />}
+            {solution !==
+            Number(
+              listOfGuesses[listOfGuesses.length - 1].split('').join('')
+            ) ? (
+              numberOfDigits ? (
+                <GuessForm />
+              ) : (
+                <DigitForm />
+              )
+            ) : (
+              <WinCard />
+            )}
           </div>
         </div>
       </div>

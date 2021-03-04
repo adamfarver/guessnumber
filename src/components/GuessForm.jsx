@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import {Formik, Form, Field, ErrorMessage} from 'formik';
 import {AppContext} from './AppContext';
+import formatNumberInput from '../_helper/formatNumberInput';
 function GuessForm() {
   let [
     numberOfDigits,
@@ -34,7 +35,14 @@ function GuessForm() {
         {({isSubmitting, setFieldValue, values}) => (
           <Form>
             <h1>What's Your Guess?</h1>
-            <Field type="number" name="guess" min="0" />
+            <Field
+              // type="number"
+              name="guess"
+              min="0"
+              onKeyUp={(e) =>
+                setFieldValue('guess', formatNumberInput(e.target.value))
+              }
+            />
 
             <ErrorMessage name="guess" component="p" className="error" />
 
