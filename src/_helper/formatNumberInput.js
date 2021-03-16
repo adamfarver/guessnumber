@@ -3,7 +3,7 @@ export default function formalNumberInput(number) {
     return number.toLocaleString('en');
   }
   if (typeof number === 'string') {
-    number = Number(number.split(',').join(''));
+    number = Number(number.replace(/\D/g, ''));
     return number.toLocaleString('en');
   }
 }

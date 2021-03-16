@@ -10,4 +10,7 @@ describe('Format Input Number', () => {
   it('Deals with strings', () => {
     expect(formalNumberInput('1,000,000')).toEqual('1,000,000');
   });
+  it('Deal with inputs that will return NaN', () => {
+    expect(formalNumberInput('1,000,00a')).toEqual('100,000');
+  });
 });
