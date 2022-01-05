@@ -4,8 +4,8 @@ Front-End Application
 
 ## Key Features:
 
-React Front-End
-Jest Testing
+- React Front-End
+- Jest Testing
 
 ## Screenshot
 
@@ -23,7 +23,7 @@ are higher or lower than the target number.
 
 ## Technologies
 
-ReactJS - General Interface Library
-ReactJS Context API - App State
-Formik - Form Inputs
-Jest - Unit Tests
+- ReactJS - General Interface Library
+- ReactJS Context API - App State
+- Formik - Form Inputs
+- Jest - Unit Tests
