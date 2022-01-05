@@ -15,6 +15,8 @@ Front-End Application
 
 [Try it now](https://adamfarver-guessnumber.herokuapp.com)
 
+*This deployment is hosted on Heroku's Free Tier and may take up to a minute to
+spin up.*
 ## What
 
 Guess Number is a simple application that facilitates learning number
